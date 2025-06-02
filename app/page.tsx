@@ -124,49 +124,54 @@ export default function HomePage() {
         }}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+      <div id="home" className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
         {/* Navigation */}
         <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
               <div className="flex items-center space-x-4 animate-slide-in-left">
                 <div className="animate-logo-pulse">
+                  <Link
+                  href={'#home'}
+                  scroll={true}>
                   <Image
-                    src="/logo.svg"
-                    alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
-                    width={48}
-                    height={48}
-                    className="h-12 w-12"
+                  
+                  src="/logo.svg"
+                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                  width={100}
+                  height={100}
+                  // className="h-12 w-12"
                   />
+                  </Link>
                 </div>
-                <div>
+                {/* <div>
                   <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
                   <p className="text-sm text-blue-400 font-semibold tracking-wider">Quality Wood Pallet Makers</p>
-                </div>
+                </div> */}
               </div>
               <div className="hidden md:flex space-x-8 animate-slide-in-right">
-                <Link
+                <Link scroll={true}
                   href="/"
                   className="text-blue-400 font-medium hover:text-blue-300 transition-all duration-300 hover:scale-105"
                   aria-label="Home - Royal Wood Packers"
                 >
                   Home
                 </Link>
-                <Link
+                <Link scroll={true}
                   href="/products"
                   className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
                   aria-label="Wooden Pallets Products"
                 >
                   Products
                 </Link>
-                <Link
+                <Link scroll={true}
                   href="/contact"
                   className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
                   aria-label="Contact Royal Wood Packers"
                 >
                   Contact
                 </Link>
-                <Link
+                <Link scroll={true}
                   href="/request-rate"
                   className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
                   aria-label="Get Wooden Pallet Quote"
@@ -178,7 +183,7 @@ export default function HomePage() {
                 asChild
                 className="bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 animate-bounce-in"
               >
-                <Link href="/request-rate" aria-label="Request Wooden Pallet Quote">
+                <Link scroll={true} href="/request-rate" aria-label="Request Wooden Pallet Quote">
                   Get Quote
                 </Link>
               </Button>
@@ -211,7 +216,7 @@ export default function HomePage() {
                     asChild
                     className="bg-blue-600 hover:bg-blue-700 group transform hover:scale-105 transition-all duration-300"
                   >
-                    <Link href="/products" aria-label="View Wooden Pallet Products">
+                    <Link scroll={true} href="/products" aria-label="View Wooden Pallet Products">
                       View Products
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                     </Link>
@@ -222,7 +227,7 @@ export default function HomePage() {
                     asChild
                     className="border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white transform hover:scale-105 transition-all duration-300"
                   >
-                    <Link href="/request-rate" aria-label="Request Wooden Pallet Quote">
+                    <Link scroll={true} href="/request-rate" aria-label="Request Wooden Pallet Quote">
                       Request Quote
                     </Link>
                   </Button>
@@ -231,7 +236,7 @@ export default function HomePage() {
               <div className="relative animate-fade-in-right">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl transform rotate-3 opacity-20 animate-float"></div>
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/HardWood.png"
                   alt="Royal Wood Packers - Premium Quality Wooden Pallets Manufacturing"
                   width={600}
                   height={500}
@@ -662,7 +667,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
-                <Link href="/request-rate" aria-label="Get Free Wooden Pallet Quote">
+                <Link scroll={true} href="/request-rate" aria-label="Get Free Wooden Pallet Quote">
                   Get Free Quote
                 </Link>
               </Button>
@@ -672,7 +677,7 @@ export default function HomePage() {
                 asChild
                 className="border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white"
               >
-                <Link href="/contact" aria-label="Contact Royal Wood Packers">
+                <Link scroll={true} href="/contact" aria-label="Contact Royal Wood Packers">
                   Contact Us
                 </Link>
               </Button>
@@ -686,7 +691,18 @@ export default function HomePage() {
             <div className="grid md:grid-cols-4 gap-8">
               <div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <Image src="/logo.svg" alt="Royal Wood Packers Logo" width={32} height={32} className="h-8 w-8" />
+                   <Link
+                  href={'/'}
+                  scroll={true}>
+                  <Image
+                  
+                  src="/logo.svg"
+                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                  width={100}
+                  height={100}
+                  // className="h-12 w-12"
+                  />
+                  </Link>
                   <div>
                     <span className="text-xl font-bold">ROYAL WOOD PACKERS</span>
                     <p className="text-xs text-blue-400">Premium Wooden Pallet Manufacturer</p>
@@ -701,27 +717,27 @@ export default function HomePage() {
                 <h3 className="font-semibold mb-4 text-blue-400">Quick Links</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>
-                    <a href="#about" className="hover:text-blue-400 transition-colors">
+                    <Link href="#about" className="hover:text-blue-400 transition-colors">
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#products" className="hover:text-blue-400 transition-colors">
+                    <Link href="#products" className="hover:text-blue-400 transition-colors">
                       Our Products
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#industries" className="hover:text-blue-400 transition-colors">
+                    <Link href="#industries" className="hover:text-blue-400 transition-colors">
                       Industries We Serve
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#quality" className="hover:text-blue-400 transition-colors">
+                    <Link href="#quality" className="hover:text-blue-400 transition-colors">
                       Quality & Certifications
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="hover:text-blue-400 transition-colors">
+                    <Link scroll={true} href="/contact" className="hover:text-blue-400 transition-colors">
                       Contact Us
                     </Link>
                   </li>
@@ -731,27 +747,27 @@ export default function HomePage() {
                 <h3 className="font-semibold mb-4 text-blue-400">Wooden Packaging Products</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>
-                    <a href="#products" className="hover:text-blue-400 transition-colors">
+                    <Link href="#products" className="hover:text-blue-400 transition-colors">
                       View All Products
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/products/rubber-wood-pallets" className="hover:text-blue-400 transition-colors">
+                    <Link scroll={true} href="/products/rubber-wood-pallets" className="hover:text-blue-400 transition-colors">
                       ISPM-15 Certified Wooden Pallets
                     </Link>
                   </li>
                   <li>
-                    <Link href="/products/wooden-boxes" className="hover:text-blue-400 transition-colors">
+                    <Link scroll={true}  href="/products/wooden-boxes" className="hover:text-blue-400 transition-colors">
                       Custom Wooden Boxes
                     </Link>
                   </li>
                   <li>
-                    <Link href="/products/plywood-pallets" className="hover:text-blue-400 transition-colors">
+                    <Link scroll={true} href="/products/plywood-pallets" className="hover:text-blue-400 transition-colors">
                       Plywood Pallets
                     </Link>
                   </li>
                   <li>
-                    <Link href="/get-rates" className="hover:text-blue-400 transition-colors">
+                    <Link scroll={true} href="/get-rates" className="hover:text-blue-400 transition-colors">
                       Get Price Calculator
                     </Link>
                   </li>

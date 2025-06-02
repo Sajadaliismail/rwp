@@ -64,7 +64,9 @@
     @apply border-border;
   }
   body {
+
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
   }
 }
 
@@ -211,6 +213,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+
 
 /* Offset for fixed navigation */
 section[id] {

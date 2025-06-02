@@ -122,13 +122,18 @@ export default function RequestRatePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center space-x-2">
-                <Image
+               <Link
+                  href={'#home'}
+                  scroll={true}>
+                  <Image
+                  
                   src="/logo.svg"
-                  alt="Royal Wood Packers Logo - Request Wooden Pallet Quote"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10"
-                />
+                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                  width={100}
+                  height={100}
+                  // className="h-12 w-12"
+                  />
+                  </Link>
                 <div>
                   <span className="text-xl font-bold text-white">ROYAL WOOD PACKERS</span>
                   <p className="text-xs text-blue-400">Get Wooden Pallet Quotes</p>
@@ -173,10 +178,10 @@ export default function RequestRatePage() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className=" lg:grid-cols-3 gap-12">
               {/* Quote Form */}
               <div className="lg:col-span-2">
-                <Card className="bg-gray-800 border-gray-700 shadow-lg">
+                <Card className="bg-gray-800 border-gray-700 shadow-lg ">
                   <CardHeader>
                     <CardTitle className="text-2xl text-white flex items-center">
                       <Calculator className="mr-3 h-6 w-6 text-blue-400" />

@@ -43,7 +43,18 @@ export default function GetRates() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-4">
-              <Image src="/logo.svg" alt="Royal Wood Packers Logo" width={48} height={48} className="h-12 w-12" />
+              <Link
+                  href={'/'}
+                  scroll={true}>
+                  <Image
+                  
+                  src="/logo.svg"
+                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                  width={100}
+                  height={100}
+                  // className="h-12 w-12"
+                  />
+                  </Link>
               <div>
                 <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
                 <p className="text-sm text-blue-400 font-semibold tracking-wider">Quality Wood Pallet Makers</p>
@@ -108,7 +119,18 @@ export default function GetRates() {
             <div className="grid md:grid-cols-4 gap-8">
               <div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <Image src="/logo.svg" alt="Royal Wood Packers Logo" width={32} height={32} className="h-8 w-8" />
+                   <Link
+                  href={'/'}
+                  scroll={true}>
+                  <Image
+                  
+                  src="/logo.svg"
+                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                  width={100}
+                  height={100}
+                  // className="h-12 w-12"
+                  />
+                  </Link>
                   <div>
                     <span className="text-xl font-bold">ROYAL WOOD PACKERS</span>
                     <p className="text-xs text-blue-400">Premium Wooden Pallet Manufacturer</p>
