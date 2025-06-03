@@ -144,10 +144,11 @@ export default function HomePage() {
                   />
                   </Link>
                 </div>
-                {/* <div>
+                 <div className="hidden sm:block">
                   <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
                   <p className="text-sm text-blue-400 font-semibold tracking-wider">Quality Wood Pallet Makers</p>
-                </div> */}
+                </div>
+                
               </div>
               <div className="hidden md:flex space-x-8 animate-slide-in-right">
                 <Link scroll={true}
@@ -785,7 +786,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-              <p>&copy; 2024 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
+              <p>&copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
             </div>
           </div>
         </footer>

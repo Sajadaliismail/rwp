@@ -55,7 +55,7 @@ export default function GetRates() {
                   // className="h-12 w-12"
                   />
                   </Link>
-              <div>
+              <div className="hidden sm:block">
                 <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
                 <p className="text-sm text-blue-400 font-semibold tracking-wider">Quality Wood Pallet Makers</p>
               </div>
@@ -83,7 +83,7 @@ export default function GetRates() {
                 Get Quote
               </Link>
             </div>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 animate-bounce-in">
               <Link href="/request-rate">Get Quote</Link>
             </Button>
           </div>
@@ -225,7 +225,7 @@ export default function GetRates() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-              <p>&copy; 2024 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
+              <p>&copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
             </div>
           </div>
         </footer>

@@ -121,7 +121,8 @@ export default function RequestRatePage() {
         <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <div className="flex items-center space-x-2">
+             <div className="flex items-center space-x-4 animate-slide-in-left">
+                <div className="animate-logo-pulse">
                <Link
                   href={'#home'}
                   scroll={true}>
@@ -134,12 +135,13 @@ export default function RequestRatePage() {
                   // className="h-12 w-12"
                   />
                   </Link>
-                <div>
-                  <span className="text-xl font-bold text-white">ROYAL WOOD PACKERS</span>
-                  <p className="text-xs text-blue-400">Get Wooden Pallet Quotes</p>
+                  </div>
+                 <div className="hidden sm:block">
+                   <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
+                 <p className="text-sm text-blue-400 font-semibold tracking-wider">Get Wooden Pallet Quotes</p>
                 </div>
               </div>
-              <div className="hidden md:flex space-x-8">
+               <div className="hidden md:flex space-x-8 animate-slide-in-right">
                 <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Home
                 </Link>
@@ -153,7 +155,7 @@ export default function RequestRatePage() {
                   Get Quote
                 </Link>
               </div>
-              <Button asChild className="bg-blue-600 hover:bg-blue-700">
+              <Button asChild className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 animate-bounce-in">
                 <Link href="/request-rate">Get Quote</Link>
               </Button>
             </div>
@@ -170,15 +172,15 @@ export default function RequestRatePage() {
                   Back to Home
                 </Link>
               </Button>
-              <h1 className="text-5xl font-bold text-white mb-4">Request Wooden Pallet Quote - Get Instant Pricing</h1>
-              <p className="text-xl text-gray-300 max-w-3xl">
+              <h1 className="text-5xl font-bold text-white mb-4 animate-fade-in-up">Request Wooden Pallet Quote - Get Instant Pricing</h1>
+              <p className="text-xl text-gray-300 max-w-3xlc animate-fade-in-delayed">
                 Get a personalized quote for your wooden pallet and packaging needs from India's leading manufacturer.
                 Fill out the form below and receive a detailed estimate for ISPM-15 certified pallets, wooden boxes,
                 crates, and custom packaging solutions within 24 hours.
               </p>
             </div>
 
-            <div className=" lg:grid-cols-3 gap-12">
+            <div className=" lg:grid-cols-3 gap-12  animate-fade-in-up">
               {/* Quote Form */}
               <div className="lg:col-span-2">
                 <Card className="bg-gray-800 border-gray-700 shadow-lg ">
@@ -582,7 +584,7 @@ export default function RequestRatePage() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-              <p>&copy; 2024 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
+              <p>&copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
             </div>
           </div>
         </footer>

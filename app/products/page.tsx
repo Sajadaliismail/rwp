@@ -241,7 +241,7 @@ export default function ProductsPage() {
                   />
                   </Link>
                 </div>
-                <div>
+                <div className="hidden sm:block">
                   <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
                   <p className="text-sm text-blue-400 font-semibold tracking-wider">Premium Wooden Pallet Products</p>
                 </div>
@@ -274,7 +274,7 @@ export default function ProductsPage() {
               </div>
               <Button
                 asChild
-                className="bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
+                className="bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 animate-bounce-in"
               >
                 <Link href="/request-rate">Get Quote</Link>
               </Button>
@@ -337,7 +337,7 @@ export default function ProductsPage() {
                       alt={`${product.name} - Premium Wooden Packaging Solution`}
                       width={400}
                       height={300}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <CardHeader>
@@ -523,7 +523,7 @@ export default function ProductsPage() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-              <p>&copy; 2024 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
+              <p>&copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
             </div>
           </div>
         </footer>

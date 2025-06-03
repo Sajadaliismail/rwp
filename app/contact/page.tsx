@@ -100,7 +100,8 @@ export default function ContactPage() {
         <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-4 animate-slide-in-left">
+                <div className="animate-logo-pulse">
                  <Link
                   href={'/'}
                   scroll={true}>
@@ -113,12 +114,13 @@ export default function ContactPage() {
                   // className="h-12 w-12"
                   />
                   </Link>
+                  </div>
                 <div className="hidden sm:block">
-                  <span className="text-xl font-bold text-white">ROYAL WOOD PACKERS</span>
-                  <p className="text-xs text-blue-400">Contact Wooden Pallet Experts</p>
+                  <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
+                 <p className="text-sm text-blue-400 font-semibold tracking-wider">Contact Wooden Pallet Experts</p>
                 </div>
               </div>
-              <div className="hidden md:flex space-x-8">
+              <div className="hidden md:flex space-x-8 animate-slide-in-right">
                 <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Home
                 </Link>
@@ -149,17 +151,17 @@ export default function ContactPage() {
                   Back to Home
                 </Link>
               </Button>
-              <h1 className="text-5xl font-bold text-white mb-4">
+              <h1 className="text-5xl font-bold text-white mb-4 animate-fade-in-up">
                 Contact Royal Wood Packers - Wooden Pallet Manufacturer
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl">
+              <p className="text-xl text-gray-300 max-w-3xl animate-fade-in-delayed">
                 Get in touch with India's leading wooden pallet manufacturer for custom quotes, ISPM-15 certified
                 pallets, wooden boxes, crates, and comprehensive packaging solutions. Our expert team is ready to help
                 with all your wooden packaging needs.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-12 animate-fade-in-up">
               {/* Contact Form */}
               <Card className="bg-gray-800 border-gray-700 shadow-lg">
                 <CardHeader>
@@ -464,7 +466,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-              <p>&copy; 2024 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
+              <p>&copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
             </div>
           </div>
         </footer>
