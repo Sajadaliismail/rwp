@@ -113,7 +113,7 @@ export default function ContactPage() {
                   // className="h-12 w-12"
                   />
                   </Link>
-                <div>
+                <div className="hidden sm:block">
                   <span className="text-xl font-bold text-white">ROYAL WOOD PACKERS</span>
                   <p className="text-xs text-blue-400">Contact Wooden Pallet Experts</p>
                 </div>
