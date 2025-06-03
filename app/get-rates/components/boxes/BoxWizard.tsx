@@ -1,149 +1,143 @@
-"use client"
+"use client";
 
-import type React from "react"
+import {
+  defaultBoxError,
+  defaultBoxValue,
+} from "@/lib/defaultValues/forms";
+import {
+  BoxFormError,
+  boxFormValue,
+  stepsPropsBox,
+} from "@/lib/interfaces/forms";
+import React, { useState } from "react";
+import { BoxSize } from "./BoxSize";
+import { AdditionalInfo } from "./AdditionalInfo";
+import { BoxRates } from "./BoxRates";
 
-import { useState } from "react"
-import { Check, MoveLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Check, MoveLeft } from "lucide-react";
+import { validateBoxFirstStep, validateBoxSecondStep } from "@/lib/utilities/validationHelper";
 
-// Placeholder interfaces - replace with your actual imports
-interface boxFormValue {
-  length: string
-  width: string
-  height: string
-  type: string
-  capacity: number
-  requirement: string
-  name: string
-  email: string
-  remarks: string
-}
-
-interface BoxFormError {
-  length?: string
-  width?: string
-  height?: string
-  requirement?: string
-  name?: string
-  email?: string
-  remarks?: string
-}
-
-// Placeholder components - replace with your actual components
-const BoxSize = ({ formData, handleInputChange, errorData }: any) => (
-  <div className="text-white">Box Size Component - Replace with your actual component</div>
-)
-
-const AdditionalInfo = ({ formData, handleInputChange, errorData }: any) => (
-  <div className="text-white">Additional Info Component - Replace with your actual component</div>
-)
-
-const BoxRates = ({ formData }: any) => (
-  <div className="text-white">Box Rates Component - Replace with your actual component</div>
-)
-
-const steps = [
-  { title: "Box Info", component: BoxSize },
-  { title: "Additional Info", component: AdditionalInfo },
+const steps: stepsPropsBox[] = [
+  { title: "Pallet Info", component: BoxSize },
+  { title: "Additonal Info", component: AdditionalInfo },
   { title: "Cost", component: BoxRates },
-]
-
-interface BoxWizardProps {
-  onBack: () => void
+];
+interface BoxWizard {
+  onBack: () => void;
 }
-
-export const BoxWizard: React.FC<BoxWizardProps> = ({ onBack }) => {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [formData, setFormData] = useState<boxFormValue>({
-    length: "",
-    width: "",
-    height: "",
-    type: "",
-    capacity: 1000,
-    requirement: "",
-    name: "",
-    email: "",
-    remarks: "",
-  })
-  const [formDataError, setFormDataError] = useState<BoxFormError>({})
+export const BoxWizard: React.FC<BoxWizard> = ({ onBack }) => {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [formData, setFormData] = useState<boxFormValue>(defaultBoxValue);
+  const [formDataError, setFormDataError] =
+    useState<BoxFormError>(defaultBoxError);
 
   const handleNext = () => {
-    setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))
-  }
+    setFormDataError(defaultBoxError);
+    if (currentStep === 0) {
+    const validate = validateBoxFirstStep(formData);
+      const err = validate.error;
+      setFormDataError((prev) => {
+        return { ...prev, ...err };
+      });
+      if (!validate.isError) {
+        setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+      }
+    }
+    if (currentStep === 1) {
+      const validate = validateBoxSecondStep(formData);
+      const err = validate.error;
+      setFormDataError((prev) => {
+        return { ...prev, ...err };
+      });
+      if (!validate.isError) {
+        setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+      }
+    }
+  };
 
   const handlePrev = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0))
-  }
+    setCurrentStep((prev) => Math.max(prev - 1, 0));
+  };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
 
-  const CurrentStepComponent = steps[currentStep].component
+    setFormData((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
+
+  const CurrentStepComponent = steps[currentStep].component;
 
   return (
-    <div className="max-w-4xl w-full mx-auto sm:px-6 px-3">
-      {/* Header */}
-      <div className="relative mb-8">
+    <div className="max-w-4xl w-full mx-auto  sm:px-6 px-3 rounded-lg shadow-md">
+      {/* Progress bar */}
+      <div className="relative">
         <button
           onClick={onBack}
-          className="hover:bg-gray-700 my-3 transition-all duration-300 rounded-md hover:scale-110 p-2 absolute text-blue-400"
+          className="hover:bg-slate-900 my-3 transition-all duration-500 rounded-md hover:scale-125 sm:px-4 absolute "
         >
           <MoveLeft size={35} />
         </button>
-        <p className="text-center text-xl sm:text-3xl my-3 mb-6 font-bold text-white">Box Pricing Info</p>
+        <p className="text-center text-xl sm:text-3xl my-3 mb-6 font-bold ">
+        Box Pricing Info
+        </p>
       </div>
-
-      {/* Progress bar */}
       <div className="mb-8">
         <div className="flex justify-between mb-2">
-          {steps.map((step, index) => (
+          {steps.map((_, index) => (
             <div
               key={index}
-              className={`text-sm font-medium ${index <= currentStep ? "text-blue-400" : "text-gray-500"}`}
+              className={`text-sm font-medium ${
+                index <= currentStep ? "text-green-600" : "text-gray-400"
+              }`}
             >
               <Check
                 strokeWidth={4}
-                className={`p-1 rounded-full text-white ${index <= currentStep ? "bg-blue-600" : "bg-gray-500"}`}
+                className={`p-1 rounded-full text-white ${
+                  index <= currentStep ? "bg-green-600" : "bg-gray-400"
+                }`}
               />
             </div>
           ))}
         </div>
-        <div className="h-2 bg-gray-700 rounded-full">
+        <div className="h-2 bg-gray-200 rounded-full">
           <div
-            className="h-full bg-blue-600 rounded-full transition-all duration-300 ease-in-out"
-            style={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
+            className="h-full bg-green-600 rounded-full transition-all duration-300 ease-in-out"
+            style={{ width: `${currentStep * 0.5 * 100}%` }}
           ></div>
         </div>
       </div>
 
-      {/* Current Step Component */}
-      <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-        <CurrentStepComponent formData={formData} handleInputChange={handleInputChange} errorData={formDataError} />
-      </div>
+      <CurrentStepComponent
+        formData={formData}
+        handleInputChange={handleInputChange}
+        errorData={formDataError}
+      />
 
       {/* Navigation buttons */}
-      <div className="mt-8 flex">
-        <Button
+      <div className="mt-8 flex ">
+        <button
           onClick={handlePrev}
           disabled={currentStep === 0}
-          className={`px-4 py-2 mr-auto bg-gray-600 text-white rounded-md disabled:opacity-50 hover:bg-gray-500 ${
-            currentStep === 0 ? "hidden" : ""
-          }`}
+          hidden={currentStep === 0}
+          className="px-4 py-2 mr-auto bg-gray-200 text-gray-800 rounded-md disabled:opacity-50"
         >
           Previous
-        </Button>
-        <Button
+        </button>
+        <button
           onClick={handleNext}
           disabled={currentStep === steps.length - 1}
-          className={`px-4 py-2 bg-blue-600 ml-auto text-white rounded-md disabled:opacity-50 hover:bg-blue-700 ${
-            currentStep === steps.length - 1 ? "hidden" : ""
-          }`}
+          hidden={currentStep === steps.length - 1}
+          className="px-4 py-2 bg-blue-600 ml-auto text-white rounded-md disabled:opacity-50"
         >
           {currentStep === steps.length - 2 ? "Get Rates" : "Next"}
-        </Button>
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};

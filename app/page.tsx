@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, Star, Users, Package, Truck, Target, Heart, Shield } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Package, Truck, Target, Heart, Shield, Calculator, MessageCircle, Home } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
@@ -124,55 +124,51 @@ export default function HomePage() {
         }}
       />
 
-      <div id="home" className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+      <div id="home" className="min-h-screen overflow-clip bg-gradient-to-b from-gray-900 to-gray-800">
         {/* Navigation */}
-        <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-700">
+         <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-50 border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
-              <div className="flex items-center space-x-4 animate-slide-in-left">
+              <div className="flex items-center space-x-4">
                 <div className="animate-logo-pulse">
-                  <Link
-                  href={'#home'}
-                  scroll={true}>
                   <Image
-                  
-                  src="/logo.svg"
-                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
-                  width={100}
-                  height={100}
-                  // className="h-12 w-12"
+                    src="/logo.svg"
+                    alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                    width={100}
+                    height={100}
+                    className="h-24 w-24"
                   />
-                  </Link>
                 </div>
-                 <div className="hidden sm:block">
+                <div className="hidden md:block">
                   <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
                   <p className="text-sm text-blue-400 font-semibold tracking-wider">Quality Wood Pallet Makers</p>
                 </div>
-                
               </div>
-              <div className="hidden md:flex space-x-8 animate-slide-in-right">
-                <Link scroll={true}
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex space-x-8">
+                <Link
                   href="/"
                   className="text-blue-400 font-medium hover:text-blue-300 transition-all duration-300 hover:scale-105"
                   aria-label="Home - Royal Wood Packers"
                 >
                   Home
                 </Link>
-                <Link scroll={true}
+                <Link
                   href="/products"
                   className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
                   aria-label="Wooden Pallets Products"
                 >
                   Products
                 </Link>
-                <Link scroll={true}
+                <Link
                   href="/contact"
                   className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
                   aria-label="Contact Royal Wood Packers"
                 >
                   Contact
                 </Link>
-                <Link scroll={true}
+                <Link
                   href="/request-rate"
                   className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
                   aria-label="Get Wooden Pallet Quote"
@@ -180,14 +176,49 @@ export default function HomePage() {
                   Get Quote
                 </Link>
               </div>
-              <Button
-                asChild
-                className="bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 animate-bounce-in"
-              >
-                <Link scroll={true} href="/request-rate" aria-label="Request Wooden Pallet Quote">
-                  Get Quote
+
+              {/* Mobile Navigation Icons */}
+              <div className="flex md:hidden space-x-4">
+                <Link
+                  href="/"
+                  className="text-blue-400 hover:text-blue-300 transition-colors p-2"
+                  aria-label="Home"
+                >
+                  <Home className="h-5 w-5" />
                 </Link>
-              </Button>
+                <Link
+                  href="/products"
+                  className="text-gray-300 hover:text-blue-400 transition-colors p-2"
+                  aria-label="Products"
+                >
+                  <Package className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-blue-400 transition-colors p-2"
+                  aria-label="Contact"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="/request-rate"
+                  className="text-gray-300 hover:text-blue-400 transition-colors p-2"
+                  aria-label="Get Quote"
+                >
+                  <Calculator className="h-5 w-5" />
+                </Link>
+              </div>
+
+              <div className="hidden md:block">
+                <Button
+                  asChild
+                  className="bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
+                >
+                  <Link href="/request-rate" aria-label="Request Wooden Pallet Quote">
+                    Get Quote
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </nav>
