@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     url: "https://royalwoodpackers.in",
     images: [
       {
-        url: "/og-home.jpg",
+        url: "/rwp.svg",
         width: 1200,
         height: 630,
         alt: "Royal Wood Packers - Premium Wooden Pallets Manufacturing",

@@ -65,7 +65,7 @@ export const metadata: Metadata = {
       "India's leading wooden pallet manufacturer since 2000. Premium quality wooden pallets, boxes, crates & packaging solutions. ISPM-15 certified, nationwide delivery.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/rwp.svg",
         width: 1200,
         height: 630,
         alt: "Royal Wood Packers - Premium Wooden Pallets Manufacturer",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "Royal Wood Packers - Premium Wooden Pallets Manufacturer in India",
     description:
       "India's leading wooden pallet manufacturer since 2000. Premium quality wooden pallets, boxes, crates & packaging solutions. ISPM-15 certified, nationwide delivery.",
-    images: ["/og-image.jpg"],
+    images: ["/rwp.svg"],
     creator: "@royalwoodpackers",
   },
   robots: {
