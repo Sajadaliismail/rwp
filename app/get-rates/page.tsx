@@ -109,7 +109,7 @@ export default function GetRates() {
           </div>
         )}
 
-        <div ref={wizardRef} className="min-h-[60vh] flex justify-center px-4">
+        <div ref={wizardRef} className="min-h-[60vh] flex justify-center px-4 py-6">
           {!activeWizard && <CustomOptions onSelect={setActiveWizard} />}
           {renderWizard()}
         </div>

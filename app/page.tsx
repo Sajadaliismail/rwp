@@ -4,6 +4,18 @@ import { ArrowRight, CheckCircle, Star, Users, Package, Truck, Target, Heart, Sh
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
+import { Didact_Gothic ,Saira} from "next/font/google";
+
+
+const didact = Didact_Gothic({
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
+const saira = Saira({
+  weight: ["100", "400", "700", "900"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Royal Wood Packers - India's Leading Wooden Pallet Manufacturer | Premium Quality Since 2000",
@@ -140,8 +152,8 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="hidden md:block">
-                  <span className="text-2xl font-black text-white tracking-wide">ROYAL WOOD PACKERS</span>
-                  <p className="text-sm text-blue-400 font-semibold tracking-wider">Quality Wood Pallet Makers</p>
+                  <span className={` text-2xl font-black text-white tracking-wide`}>ROYAL WOOD PACKERS</span>
+                  <p className={`${didact.className} text-sm text-blue-400 font-semibold tracking-wider`}>Quality Wood Pallet Makers</p>
                 </div>
               </div>
 
@@ -227,14 +239,14 @@ export default function HomePage() {
         <section className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8 animate-fade-in-up">
-                <div className="animate-text-reveal">
+              <div className={` space-y-8 animate-fade-in-up"`}>
+                <div className={`animate-text-reveal ${saira.className}`}>
                   <h1 className="text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
                     ROYAL WOOD
                     <span className="text-blue-400 block animate-gradient-text">PACKERS</span>
                   </h1>
                 </div>
-                <p className="text-3xl text-blue-400 font-bold tracking-wide animate-slide-in-bottom">
+                <p className={`${didact.className} text-3xl text-blue-400 font-bold tracking-wide animate-slide-in-bottom"`}>
                   India's Premier Wooden Pallet Manufacturer
                 </p>
                 <p className="text-xl text-gray-300 leading-relaxed animate-fade-in-delayed">

@@ -7,47 +7,14 @@ import { Check, MoveLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // You'll need to import your existing interfaces and default values
-// import { defaultPalletForm, defaultPalletFormError } from "@/lib/defaultValues/forms";
-// import { palletFormError, palletFormValue, stepsProps } from "@/lib/interfaces/forms";
-// import { validatePalletFirstStep, validatePalletSecondStep } from "@/lib/utilities/validationHelper";
+import { defaultPalletForm, defaultPalletFormError, heights } from "@/lib/defaultValues/forms";
+import { palletFormError, palletFormValue } from "@/lib/interfaces/forms";
+import { validatePalletFirstStep, validatePalletSecondStep } from "@/lib/utilities/validationHelper";
+import { PalletInfo } from "./PalletSize"
+import { AdditionalInfo } from "./AdditionalInfo"
+import { PalletRates } from "./PalletRates"
 
-// Placeholder interfaces - replace with your actual imports
-interface palletFormValue {
-  length: string
-  width: string
-  height: string
-  palletOpening: string
-  type: string
-  capacity: number
-  requirement: string
-  name: string
-  email: string
-  remarks: string
-}
 
-interface palletFormError {
-  length?: string
-  width?: string
-  height?: string
-  palletOpening?: string
-  requirement?: string
-  name?: string
-  email?: string
-  remarks?: string
-}
-
-// Placeholder components - replace with your actual components
-const PalletInfo = ({ formData, handleInputChange, errorData }: any) => (
-  <div className="text-white">Pallet Info Component - Replace with your actual component</div>
-)
-
-const AdditionalInfo = ({ formData, handleInputChange, errorData }: any) => (
-  <div className="text-white">Additional Info Component - Replace with your actual component</div>
-)
-
-const PalletRates = ({ formData }: any) => (
-  <div className="text-white">Pallet Rates Component - Replace with your actual component</div>
-)
 
 const steps = [
   { title: "Pallet Info", component: PalletInfo },
@@ -61,33 +28,64 @@ interface PalletWizardProps {
 
 export const PalletWizard: React.FC<PalletWizardProps> = ({ onBack }) => {
   const [currentStep, setCurrentStep] = useState(0)
-  const [formData, setFormData] = useState<palletFormValue>({
-    length: "",
-    width: "",
-    height: "",
-    palletOpening: "",
-    type: "",
-    capacity: 1000,
-    requirement: "",
-    name: "",
-    email: "",
-    remarks: "",
-  })
-  const [formDataError, setFormDataError] = useState<palletFormError>({})
+  const [formData, setFormData] = useState<palletFormValue>(defaultPalletForm)
+  const [formDataError, setFormDataError] = useState<palletFormError>(defaultPalletFormError)
 
   const handleNext = () => {
-    // Add your validation logic here
-    setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))
-  }
+    setFormDataError(defaultPalletFormError);
+    if (currentStep === 0) {
+      const validate = validatePalletFirstStep(formData);
+      const err = validate.error;
+      setFormDataError((prev) => {
+        return { ...prev, ...err };
+      });
+      if (!validate.isError) {
+        setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+      }
+    }
+    if (currentStep === 1) {
+      const validate = validatePalletSecondStep(formData);
+      const err = validate.error;
+      setFormDataError((prev) => {
+        return { ...prev, ...err };
+      });
+      if (!validate.isError) {
+        setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+      }
+    }
+  };
 
   const handlePrev = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0))
-  }
+    setCurrentStep((prev) => Math.max(prev - 1, 0));
+  };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    
+    setFormData((prev) => {
+      if (name === "palletOpening") {
+        return {
+          ...prev,
+          [name]: Number(value),
+          height: Number(Math.max(0, Number(value) + heights[prev.capacity])),
+        };
+      }
+      if (name !== "height") {
+        return { ...prev, [name]: value };
+      }
+      return {
+        ...prev,
+        [name]: Number(value),
+        palletOpening: Number(
+          Math.max(0, Number(value) - heights[prev.capacity]).toFixed(1)
+        ),
+      };
+    });
+  };
 
   const CurrentStepComponent = steps[currentStep].component
 

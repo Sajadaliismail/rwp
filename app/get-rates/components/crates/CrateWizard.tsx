@@ -5,43 +5,13 @@ import type React from "react"
 import { useState } from "react"
 import { Check, MoveLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { CrateSize } from "./CrateSize"
+import { AdditionalInfo } from "./AdditionalInfo"
+import { CrateRates } from "./CrateRates"
+import { CrateFormError, CrateFormValue } from "@/lib/interfaces/forms"
+import { defaultCrateError, defaultCrateValue } from "@/lib/defaultValues/forms"
 
-// Placeholder interfaces - replace with your actual imports
-interface CrateFormValue {
-  length: string
-  width: string
-  height: string
-  gap: string
-  capacity: number
-  requirement: string
-  name: string
-  email: string
-  remarks: string
-}
 
-interface CrateFormError {
-  length?: string
-  width?: string
-  height?: string
-  gap?: string
-  requirement?: string
-  name?: string
-  email?: string
-  remarks?: string
-}
-
-// Placeholder components - replace with your actual components
-const CrateSize = ({ formData, handleInputChange, errorData }: any) => (
-  <div className="text-white">Crate Size Component - Replace with your actual component</div>
-)
-
-const AdditionalInfo = ({ formData, handleInputChange, errorData }: any) => (
-  <div className="text-white">Additional Info Component - Replace with your actual component</div>
-)
-
-const CrateRates = ({ formData }: any) => (
-  <div className="text-white">Crate Rates Component - Replace with your actual component</div>
-)
 
 const steps = [
   { title: "Crate Info", component: CrateSize },
@@ -55,31 +25,51 @@ interface CrateWizardProps {
 
 export const CrateWizard: React.FC<CrateWizardProps> = ({ onBack }) => {
   const [currentStep, setCurrentStep] = useState(0)
-  const [formData, setFormData] = useState<CrateFormValue>({
-    length: "",
-    width: "",
-    height: "",
-    gap: "",
-    capacity: 1000,
-    requirement: "",
-    name: "",
-    email: "",
-    remarks: "",
-  })
-  const [formDataError, setFormDataError] = useState<CrateFormError>({})
+  const [formData, setFormData] = useState<CrateFormValue>(defaultCrateValue)
+  const [formDataError, setFormDataError] = useState<CrateFormError>(defaultCrateError)
 
   const handleNext = () => {
-    setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))
-  }
+    setFormDataError(defaultCrateError);
+    if (currentStep === 0) {
+    // const validate = validateBoxFirstStep(formData);
+    //   const err = validate.error;
+    //   setFormDataError((prev) => {
+    //     return { ...prev, ...err };
+    //   });
+    //   if (!validate.isError) {
+    //     setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+    //   }
+    }
+    if (currentStep === 1) {
+      // const validate = validateBoxSecondStep(formData);
+      // const err = validate.error;
+      // setFormDataError((prev) => {
+      //   return { ...prev, ...err };
+      // });
+      // if (!validate.isError) {
+      //   setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+      // }
+    }
+        setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+  
+  };
+
 
   const handlePrev = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0))
-  }
+    setCurrentStep((prev) => Math.max(prev - 1, 0));
+  };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
 
   const CurrentStepComponent = steps[currentStep].component
 
