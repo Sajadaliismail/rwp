@@ -1,11 +1,27 @@
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, CheckCircle, Star, Users, Package, Truck, Target, Heart, Shield, Calculator, MessageCircle, Home } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import type { Metadata } from "next"
-import { Didact_Gothic ,Saira} from "next/font/google";
-
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Users,
+  Package,
+  Truck,
+  Target,
+  Heart,
+  Shield,
+  Calculator,
+  MessageCircle,
+  Home,
+  Instagram,
+  Linkedin,
+  Facebook,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
+import { Didact_Gothic, Saira } from "next/font/google";
+import LocationMap from "@/components/location";
 
 const didact = Didact_Gothic({
   weight: ["400"],
@@ -18,7 +34,8 @@ const saira = Saira({
 });
 
 export const metadata: Metadata = {
-  title: "Royal Wood Packers - India's Leading Wooden Pallet Manufacturer | Premium Quality Since 2000",
+  title:
+    "Royal Wood Packers - India's Leading Wooden Pallet Manufacturer | Premium Quality Since 2000",
   description:
     "Royal Wood Packers - India's premier wooden pallet manufacturer since 2000. Specializing in ISPM-15 certified export pallets, industrial wooden packaging, custom wooden boxes & crates. Serving 1000+ clients nationwide with premium quality wooden packaging solutions. Get instant quotes for wooden pallets, plywood pallets, painted pallets & rental services.",
   keywords: [
@@ -60,7 +77,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://royalwoodpackers.in",
   },
-}
+};
 
 export default function HomePage() {
   return (
@@ -97,7 +114,8 @@ export default function HomePage() {
                     itemOffered: {
                       "@type": "Product",
                       name: "Rubber Wood Pallets",
-                      description: "Premium rubber wood pallets with dense grain strength, starting from ₹1,450",
+                      description:
+                        "Premium rubber wood pallets with dense grain strength, starting from ₹1,450",
                       offers: {
                         "@type": "Offer",
                         price: "1450",
@@ -111,7 +129,8 @@ export default function HomePage() {
                     itemOffered: {
                       "@type": "Product",
                       name: "ISPM-15 Certified Export Pallets",
-                      description: "Heat treated wooden pallets compliant with international shipping standards",
+                      description:
+                        "Heat treated wooden pallets compliant with international shipping standards",
                       offers: {
                         "@type": "Offer",
                         availability: "https://schema.org/InStock",
@@ -136,9 +155,12 @@ export default function HomePage() {
         }}
       />
 
-      <div id="home" className="min-h-screen overflow-clip bg-gradient-to-b from-gray-900 to-gray-800">
+      <div
+        id="home"
+        className="min-h-screen overflow-clip bg-gradient-to-b from-gray-900 to-gray-800"
+      >
         {/* Navigation */}
-         <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-50 border-b border-gray-800">
+        <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-50 border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
               <div className="flex items-center space-x-4">
@@ -152,8 +174,16 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="hidden md:block">
-                  <span className={` text-2xl font-black text-white tracking-wide`}>ROYAL WOOD PACKERS</span>
-                  <p className={`${didact.className} text-sm text-blue-400 font-semibold tracking-wider`}>Quality Wood Pallet Makers</p>
+                  <span
+                    className={` text-2xl font-black text-white tracking-wide`}
+                  >
+                    ROYAL WOOD PACKERS
+                  </span>
+                  <p
+                    className={`${didact.className} text-sm text-blue-400 font-semibold tracking-wider`}
+                  >
+                    Quality Wood Pallet Makers
+                  </p>
                 </div>
               </div>
 
@@ -226,7 +256,10 @@ export default function HomePage() {
                   asChild
                   className="bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
                 >
-                  <Link href="/request-rate" aria-label="Request Wooden Pallet Quote">
+                  <Link
+                    href="/request-rate"
+                    aria-label="Request Wooden Pallet Quote"
+                  >
                     Get Quote
                   </Link>
                 </Button>
@@ -243,16 +276,22 @@ export default function HomePage() {
                 <div className={`animate-text-reveal ${saira.className}`}>
                   <h1 className="text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
                     ROYAL WOOD
-                    <span className="text-blue-400 block animate-gradient-text">PACKERS</span>
+                    <span className="text-blue-400 block animate-gradient-text">
+                      PACKERS
+                    </span>
                   </h1>
                 </div>
-                <p className={`${didact.className} text-3xl text-blue-400 font-bold tracking-wide animate-slide-in-bottom"`}>
+                <p
+                  className={`${didact.className} text-3xl text-blue-400 font-bold tracking-wide animate-slide-in-bottom"`}
+                >
                   India's Premier Wooden Pallet Manufacturer
                 </p>
                 <p className="text-xl text-gray-300 leading-relaxed animate-fade-in-delayed">
-                  Premium ISPM-15 certified wooden pallets and packaging solutions since 2000. Serving 1000+ clients
-                  across India with reliable, sustainable wooden pallets for export, logistics, and industrial
-                  applications. Get instant quotes for custom wooden pallets, boxes, and crates.
+                  Premium ISPM-15 certified wooden pallets and packaging
+                  solutions since 2000. Serving 1000+ clients across India with
+                  reliable, sustainable wooden pallets for export, logistics,
+                  and industrial applications. Get instant quotes for custom
+                  wooden pallets, boxes, and crates.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 animate-buttons-appear">
                   <Button
@@ -260,7 +299,11 @@ export default function HomePage() {
                     asChild
                     className="bg-blue-600 hover:bg-blue-700 group transform hover:scale-105 transition-all duration-300"
                   >
-                    <Link scroll={true} href="/products" aria-label="View Wooden Pallet Products">
+                    <Link
+                      scroll={true}
+                      href="/products"
+                      aria-label="View Wooden Pallet Products"
+                    >
                       View Products
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                     </Link>
@@ -271,7 +314,11 @@ export default function HomePage() {
                     asChild
                     className="border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white transform hover:scale-105 transition-all duration-300"
                   >
-                    <Link scroll={true} href="/request-rate" aria-label="Request Wooden Pallet Quote">
+                    <Link
+                      scroll={true}
+                      href="/request-rate"
+                      aria-label="Request Wooden Pallet Quote"
+                    >
                       Request Quote
                     </Link>
                   </Button>
@@ -299,10 +346,11 @@ export default function HomePage() {
                 24+ Years of Wooden Pallet Manufacturing Excellence
               </h2>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                Established in 2000, Royal Wood Packers has grown into India's leading manufacturer and supplier of
-                premium wooden pallets and packaging solutions. We specialize in ISPM-15 certified export pallets,
-                custom wooden boxes, industrial crates, and sustainable packaging solutions for diverse industries
-                across India.
+                Established in 2000, Royal Wood Packers has grown into India's
+                leading manufacturer and supplier of premium wooden pallets and
+                packaging solutions. We specialize in ISPM-15 certified export
+                pallets, custom wooden boxes, industrial crates, and sustainable
+                packaging solutions for diverse industries across India.
               </p>
             </div>
 
@@ -310,10 +358,13 @@ export default function HomePage() {
               <Card className="bg-gray-700 border-gray-600 hover:bg-gray-600 transition-all duration-300 hover:-translate-y-2">
                 <CardContent className="p-8 text-center">
                   <Target className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-3">Our Vision</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    Our Vision
+                  </h3>
                   <p className="text-gray-300">
-                    To become India's most trusted wooden pallet manufacturer, delivering world-class quality products
-                    and exceptional customer service across all industries.
+                    To become India's most trusted wooden pallet manufacturer,
+                    delivering world-class quality products and exceptional
+                    customer service across all industries.
                   </p>
                 </CardContent>
               </Card>
@@ -321,10 +372,13 @@ export default function HomePage() {
               <Card className="bg-gray-700 border-gray-600 hover:bg-gray-600 transition-all duration-300 hover:-translate-y-2">
                 <CardContent className="p-8 text-center">
                   <Shield className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-3">Our Mission</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    Our Mission
+                  </h3>
                   <p className="text-gray-300">
-                    To continuously innovate and enhance our wooden packaging solutions, delivering premium quality
-                    ISPM-15 certified pallets that exceed international standards.
+                    To continuously innovate and enhance our wooden packaging
+                    solutions, delivering premium quality ISPM-15 certified
+                    pallets that exceed international standards.
                   </p>
                 </CardContent>
               </Card>
@@ -332,10 +386,13 @@ export default function HomePage() {
               <Card className="bg-gray-700 border-gray-600 hover:bg-gray-600 transition-all duration-300 hover:-translate-y-2">
                 <CardContent className="p-8 text-center">
                   <Heart className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-3">Our Values</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    Our Values
+                  </h3>
                   <p className="text-gray-300">
-                    Commitment to quality, sustainability, and customer satisfaction drives our wooden pallet
-                    manufacturing process, ensuring reliable packaging solutions for every client.
+                    Commitment to quality, sustainability, and customer
+                    satisfaction drives our wooden pallet manufacturing process,
+                    ensuring reliable packaging solutions for every client.
                   </p>
                 </CardContent>
               </Card>
@@ -351,8 +408,9 @@ export default function HomePage() {
                 Why Choose Royal Wood Packers for Your Wooden Pallet Needs?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We combine traditional craftsmanship with modern manufacturing techniques to deliver exceptional wooden
-                packaging solutions that meet international quality standards.
+                We combine traditional craftsmanship with modern manufacturing
+                techniques to deliver exceptional wooden packaging solutions
+                that meet international quality standards.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -382,7 +440,9 @@ export default function HomePage() {
                 >
                   <CardContent className="p-8 text-center">
                     <feature.icon className="h-12 w-12 text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {feature.title}
+                    </h3>
                     <p className="text-gray-300">{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -401,7 +461,11 @@ export default function HomePage() {
                 { number: "1000+", label: "Satisfied Clients Nationwide" },
                 { number: "24/7", label: "Customer Support Service" },
               ].map((stat, index) => (
-                <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div
+                  key={index}
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <div className="text-4xl font-bold mb-2">{stat.number}</div>
                   <div className="text-blue-100">{stat.label}</div>
                 </div>
@@ -418,50 +482,59 @@ export default function HomePage() {
                 Industries We Serve with Wooden Packaging Solutions
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our premium wooden pallets and packaging solutions support diverse industries across India with
-                specialized requirements for export, logistics, and industrial applications.
+                Our premium wooden pallets and packaging solutions support
+                diverse industries across India with specialized requirements
+                for export, logistics, and industrial applications.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   name: "Export & International Logistics",
-                  description: "ISPM-15 certified wooden pallets for international shipping and export compliance",
+                  description:
+                    "ISPM-15 certified wooden pallets for international shipping and export compliance",
                   icon: "🚢",
                 },
                 {
                   name: "Manufacturing Industries",
-                  description: "Heavy-duty wooden pallets for industrial equipment and machinery transportation",
+                  description:
+                    "Heavy-duty wooden pallets for industrial equipment and machinery transportation",
                   icon: "🏭",
                 },
                 {
                   name: "Agriculture & Food Processing",
-                  description: "Food-safe wooden pallets for agricultural products and food industry applications",
+                  description:
+                    "Food-safe wooden pallets for agricultural products and food industry applications",
                   icon: "🌾",
                 },
                 {
                   name: "Pharmaceutical Industry",
-                  description: "Clean, contamination-free wooden packaging solutions for pharmaceutical products",
+                  description:
+                    "Clean, contamination-free wooden packaging solutions for pharmaceutical products",
                   icon: "💊",
                 },
                 {
                   name: "Automotive Industry",
-                  description: "Robust wooden pallets for automotive parts, components, and vehicle transportation",
+                  description:
+                    "Robust wooden pallets for automotive parts, components, and vehicle transportation",
                   icon: "🚗",
                 },
                 {
                   name: "Electronics & Technology",
-                  description: "Anti-static wooden packaging solutions for sensitive electronic equipment",
+                  description:
+                    "Anti-static wooden packaging solutions for sensitive electronic equipment",
                   icon: "📱",
                 },
                 {
                   name: "Textile Industry",
-                  description: "Breathable wooden storage solutions for fabric, garments, and textile products",
+                  description:
+                    "Breathable wooden storage solutions for fabric, garments, and textile products",
                   icon: "🧵",
                 },
                 {
                   name: "Chemical Industry",
-                  description: "Specialized wooden pallets for chemical containers and hazardous material transport",
+                  description:
+                    "Specialized wooden pallets for chemical containers and hazardous material transport",
                   icon: "⚗️",
                 },
               ].map((industry, index) => (
@@ -471,8 +544,12 @@ export default function HomePage() {
                 >
                   <CardContent className="p-6">
                     <div className="text-4xl mb-4">{industry.icon}</div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{industry.name}</h3>
-                    <p className="text-gray-400 text-sm">{industry.description}</p>
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      {industry.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm">
+                      {industry.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -488,8 +565,9 @@ export default function HomePage() {
                 Quality Certifications & Standards for Wooden Pallets
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We maintain the highest international standards of quality and compliance for wooden pallet
-                manufacturing, ensuring your products meet global trade requirements.
+                We maintain the highest international standards of quality and
+                compliance for wooden pallet manufacturing, ensuring your
+                products meet global trade requirements.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -508,12 +586,14 @@ export default function HomePage() {
                 },
                 {
                   title: "Sustainable Wood Sourcing",
-                  description: "Responsibly sourced wood from certified sustainable forests for eco-friendly packaging",
+                  description:
+                    "Responsibly sourced wood from certified sustainable forests for eco-friendly packaging",
                   icon: Heart,
                 },
                 {
                   title: "ISO Standard Manufacturing",
-                  description: "Wooden pallet manufacturing processes aligned with international quality standards",
+                  description:
+                    "Wooden pallet manufacturing processes aligned with international quality standards",
                   icon: Star,
                 },
               ].map((cert, index) => (
@@ -523,7 +603,9 @@ export default function HomePage() {
                 >
                   <CardContent className="p-8">
                     <cert.icon className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-white mb-3">{cert.title}</h3>
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {cert.title}
+                    </h3>
                     <p className="text-gray-300 text-sm">{cert.description}</p>
                   </CardContent>
                 </Card>
@@ -536,10 +618,13 @@ export default function HomePage() {
         <section id="process" className="py-16 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Our Wooden Pallet Manufacturing Process</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Our Wooden Pallet Manufacturing Process
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our streamlined wooden pallet manufacturing process ensures premium quality products delivered on time,
-                every time, meeting your specific packaging requirements.
+                Our streamlined wooden pallet manufacturing process ensures
+                premium quality products delivered on time, every time, meeting
+                your specific packaging requirements.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -584,8 +669,12 @@ export default function HomePage() {
                           {process.step}
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold text-white mb-3">{process.title}</h3>
-                      <p className="text-gray-300 text-sm">{process.description}</p>
+                      <h3 className="text-xl font-semibold text-white mb-3">
+                        {process.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm">
+                        {process.description}
+                      </p>
                     </CardContent>
                   </Card>
                   {index < 3 && (
@@ -603,10 +692,13 @@ export default function HomePage() {
         <section id="products" className="py-16 bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Our Wooden Pallet Products & Packaging Services</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Our Wooden Pallet Products & Packaging Services
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive range of wooden packaging solutions including pallets, boxes, crates, and specialized
-                services for all your industrial needs.
+                Comprehensive range of wooden packaging solutions including
+                pallets, boxes, crates, and specialized services for all your
+                industrial needs.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -622,14 +714,18 @@ export default function HomePage() {
                 >
                   <CardContent className="p-6 text-center">
                     <product.icon className="h-10 w-10 text-blue-400 mx-auto mb-3" />
-                    <h3 className="text-lg font-semibold text-white">{product.name}</h3>
+                    <h3 className="text-lg font-semibold text-white">
+                      {product.name}
+                    </h3>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             <div className="mt-12">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Wooden Pallet Services</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                Wooden Pallet Services
+              </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   "Wooden Pallet Recycling",
@@ -655,10 +751,12 @@ export default function HomePage() {
         <section id="testimonials" className="py-16 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">What Our Wooden Pallet Clients Say</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">
+                What Our Wooden Pallet Clients Say
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Trusted by 1000+ clients across India for premium wooden pallet solutions and exceptional customer
-                service.
+                Trusted by 1000+ clients across India for premium wooden pallet
+                solutions and exceptional customer service.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -682,17 +780,27 @@ export default function HomePage() {
                   rating: 5,
                 },
               ].map((testimonial, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow bg-gray-800 border-gray-700">
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-shadow bg-gray-800 border-gray-700"
+                >
                   <CardContent className="p-6">
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-blue-400 fill-current" />
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-blue-400 fill-current"
+                        />
                       ))}
                     </div>
                     <p className="text-gray-300 mb-4">"{testimonial.text}"</p>
                     <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.company}</div>
+                      <div className="font-semibold text-white">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {testimonial.company}
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -704,14 +812,25 @@ export default function HomePage() {
         {/* CTA Section */}
         <section id="contact" className="py-16 bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold text-white mb-4">Ready to Get Premium Wooden Pallets?</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Ready to Get Premium Wooden Pallets?
+            </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Contact Royal Wood Packers today for a custom quote on your wooden pallet and packaging needs. Get ISPM-15
-              certified pallets with nationwide delivery.
+              Contact Royal Wood Packers today for a custom quote on your wooden
+              pallet and packaging needs. Get ISPM-15 certified pallets with
+              nationwide delivery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
-                <Link scroll={true} href="/request-rate" aria-label="Get Free Wooden Pallet Quote">
+              <Button
+                size="lg"
+                asChild
+                className="bg-blue-600 hover:bg-blue-700"
+              >
+                <Link
+                  scroll={true}
+                  href="/request-rate"
+                  aria-label="Get Free Wooden Pallet Quote"
+                >
                   Get Free Quote
                 </Link>
               </Button>
@@ -721,7 +840,11 @@ export default function HomePage() {
                 asChild
                 className="border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white"
               >
-                <Link scroll={true} href="/contact" aria-label="Contact Royal Wood Packers">
+                <Link
+                  scroll={true}
+                  href="/contact"
+                  aria-label="Contact Royal Wood Packers"
+                >
                   Contact Us
                 </Link>
               </Button>
@@ -729,96 +852,140 @@ export default function HomePage() {
           </div>
         </section>
 
+        <LocationMap />
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-12 border-t border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-4 gap-8">
               <div>
                 <div className="flex items-center space-x-3 mb-4">
-                   <Link
-                  href={'/'}
-                  scroll={true}>
-                  <Image
-                  
-                  src="/logo.svg"
-                  alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
-                  width={100}
-                  height={100}
-                  // className="h-12 w-12"
-                  />
+                  <Link href={"/"} scroll={true}>
+                    <Image
+                      src="/logo.svg"
+                      alt="Royal Wood Packers Logo - Premium Wooden Pallet Manufacturer"
+                      width={100}
+                      height={100}
+                      // className="h-12 w-12"
+                    />
                   </Link>
                   <div>
-                    <span className="text-xl font-bold">ROYAL WOOD PACKERS</span>
-                    <p className="text-xs text-blue-400">Premium Wooden Pallet Manufacturer</p>
+                    <span className="text-xl font-bold">
+                      ROYAL WOOD PACKERS
+                    </span>
+                    <p className="text-xs text-blue-400">
+                      Premium Wooden Pallet Manufacturer
+                    </p>
                   </div>
                 </div>
                 <p className="text-gray-300">
-                  India's leading wooden pallet manufacturer since 2000. Premium quality ISPM-15 certified wooden
-                  pallets with commitment to sustainability and customer satisfaction.
+                  India's leading wooden pallet manufacturer since 2000. Premium
+                  quality ISPM-15 certified wooden pallets with commitment to
+                  sustainability and customer satisfaction.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold mb-4 text-blue-400">Quick Links</h3>
+                <h3 className="font-semibold mb-4 text-blue-400">
+                  Quick Links
+                </h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>
-                    <Link href="#about" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      href="#about"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="#products" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      href="#products"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Our Products
                     </Link>
                   </li>
                   <li>
-                    <Link href="#industries" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      href="#industries"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Industries We Serve
                     </Link>
                   </li>
                   <li>
-                    <Link href="#quality" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      href="#quality"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Quality & Certifications
                     </Link>
                   </li>
                   <li>
-                    <Link scroll={true} href="/contact" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      scroll={true}
+                      href="/contact"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Contact Us
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-4 text-blue-400">Wooden Packaging Products</h3>
+                <h3 className="font-semibold mb-4 text-blue-400">
+                  Wooden Packaging Products
+                </h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>
-                    <Link href="#products" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      href="#products"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       View All Products
                     </Link>
                   </li>
                   <li>
-                    <Link scroll={true} href="/products/rubber-wood-pallets" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      scroll={true}
+                      href="/products/rubber-wood-pallets"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       ISPM-15 Certified Wooden Pallets
                     </Link>
                   </li>
                   <li>
-                    <Link scroll={true}  href="/products/wooden-boxes" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      scroll={true}
+                      href="/products/wooden-boxes"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Custom Wooden Boxes
                     </Link>
                   </li>
                   <li>
-                    <Link scroll={true} href="/products/plywood-pallets" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      scroll={true}
+                      href="/products/plywood-pallets"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Plywood Pallets
                     </Link>
                   </li>
                   <li>
-                    <Link scroll={true} href="/get-rates" className="hover:text-blue-400 transition-colors">
+                    <Link
+                      scroll={true}
+                      href="/get-rates"
+                      className="hover:text-blue-400 transition-colors"
+                    >
                       Get Price Calculator
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-4 text-blue-400">Contact Information</h3>
+                <h3 className="font-semibold mb-4 text-blue-400">
+                  Contact Information
+                </h3>
                 <div className="space-y-2 text-gray-300">
                   <p>Perumbavoor, Ernakulam</p>
                   <p>Kerala - 683547, India</p>
@@ -828,12 +995,41 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-              <p>&copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet Manufacturer. All rights reserved.</p>
+           <div className="mt-8 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center">
+              <p>
+                &copy; 2025 Royal Wood Packers - India's Leading Wooden Pallet
+                Manufacturer. All rights reserved.
+              </p>
+              <div className="flex space-x-4 mt-4 sm:mt-0">
+            <Link
+              title="Facebook"
+              href={"https://www.facebook.com/royalwoodpackers"}
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-5 w-5" />
+            </Link>
+            <Link
+              title="Twitter"
+              href={"https://www.instagram.com/royalwoodpackers"}
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <Instagram className="h-5 w-5" />
+            </Link>
+            <Link
+              title="LinkedIn"
+              href={"https://www.linkedin.com/company/royalwoodpackers"}
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </Link>
+          </div>
             </div>
           </div>
         </footer>
       </div>
     </>
-  )
+  );
 }

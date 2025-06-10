@@ -1,10 +1,10 @@
-import type React from "react"
-import type { Metadata } from "next"
+import type React from "react";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google"
-import "./globals.css"
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,8 +20,10 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://royalwoodpackers.in"),
   title: {
-    default: "Royal Wood Packers - Premium Wooden Pallets Manufacturer in India | ISPM-15 Certified",
-    template: "%s | Royal Wood Packers - Leading Wooden Pallet Manufacturer India",
+    default:
+      "Royal Wood Packers - Premium Wooden Pallets Manufacturer in India | ISPM-15 Certified",
+    template:
+      "%s | Royal Wood Packers - Leading Wooden Pallet Manufacturer India",
   },
   description:
     "Royal Wood Packers - India's leading wooden pallet manufacturer since 2000. Premium quality wooden pallets, boxes, crates & packaging solutions. ISPM-15 certified, nationwide delivery. Get instant quotes for export pallets, industrial packaging & custom wooden solutions.",
@@ -100,13 +102,13 @@ export const metadata: Metadata = {
     canonical: "https://royalwoodpackers.in",
   },
   category: "Manufacturing",
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en-IN">
@@ -120,6 +122,36 @@ export default function RootLayout({
         <meta name="business:contact_data:region" content="Kerala" />
         <meta name="business:contact_data:postal_code" content="683547" />
         <meta name="business:contact_data:country_name" content="India" />
+        <link rel="icon" type="image/svg+xml" href="/rwp.svg" />
+        <link rel="icon" href="/rwp.png" />
+        <meta
+          name="description"
+          content="Manufacturer of wooden pallets and boxes."
+        />
+        <meta name="author" content="Royal Wood Packers" />
+        <meta
+          name="keywords"
+          content="Wooden pallets,Wooden Boxes,Wooden crates,Plastic Pallets,Pallets,Packing"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" type="image/svg+xml" href="/rwp.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta property="og:title" content="Royal Wood Packers" />
+        <meta
+          property="og:description"
+          content="Manufacturer of wooden pallets and boxes."
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://royalwoodpackers.in" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Royal Wood Packers" />
+        <meta
+          name="twitter:description"
+          content="A brief description of your site."
+        />
+        <meta name="twitter:image" content="/path-to-your-image.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -172,7 +204,8 @@ export default function RootLayout({
                     itemOffered: {
                       "@type": "Product",
                       name: "Wooden Pallets",
-                      description: "Premium quality wooden pallets for industrial and export use",
+                      description:
+                        "Premium quality wooden pallets for industrial and export use",
                     },
                   },
                   {
@@ -180,7 +213,8 @@ export default function RootLayout({
                     itemOffered: {
                       "@type": "Product",
                       name: "Wooden Boxes",
-                      description: "Custom wooden boxes for storage and shipping",
+                      description:
+                        "Custom wooden boxes for storage and shipping",
                     },
                   },
                   {
@@ -188,7 +222,8 @@ export default function RootLayout({
                     itemOffered: {
                       "@type": "Product",
                       name: "Wooden Crates",
-                      description: "Heavy-duty wooden crates for industrial applications",
+                      description:
+                        "Heavy-duty wooden crates for industrial applications",
                     },
                   },
                 ],
@@ -210,7 +245,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body  className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-black text-white `}>{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-black text-white `}
+      >
+        {children}
+      </body>
     </html>
-  )
+  );
 }
