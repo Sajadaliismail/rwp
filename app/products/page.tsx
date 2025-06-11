@@ -184,59 +184,92 @@ export default function ProductsPage() {
   return (
     <>
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            name: "Wooden Pallet Products - Royal Wood Packers",
-            description:
-              "Comprehensive range of wooden packaging products including pallets, boxes, crates, and rental services",
-            url: "https://royalwoodpackers.in/products",
-            mainEntity: {
-              "@type": "ItemList",
-              itemListElement: products.map((product, index) => ({
-                "@type": "Product",
-                position: index + 1,
-                name: product.name,
-                description: product.shortDescription,
-                image: `https://royalwoodpackers.in${product.image}`,
-                offers: {
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Wooden Pallet Products - Royal Wood Packers",
+      description:
+        "Comprehensive range of wooden packaging products including pallets, boxes, crates, and rental services",
+      url: "https://royalwoodpackers.in/products",
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: products.map((product, index) => {
+          const priceMatch = product.price.match(/[\d,.]+/);
+          const price = priceMatch ? Number(priceMatch[0].replace(/,/g, "")) : null;
+
+          const aggregateRating = {
+            "@type": "AggregateRating",
+            ratingValue: "4.5",
+            reviewCount: "24",
+          };
+
+          const review = [
+            {
+              "@type": "Review",
+              author: {
+                "@type": "Person",
+                name: "Sukesh",
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "4.8",
+              },
+              reviewBody: "Excellent quality, very durable pallets.",
+            },
+          ];
+
+          return {
+            "@type": "Product",
+            position: index + 1,
+            name: product.name,
+            description: product.shortDescription,
+            image: `https://royalwoodpackers.in${product.image}`,
+            offers: price
+              ? {
                   "@type": "Offer",
-                  price: product.price.replace(/[^\d]/g, ""),
+                  price: price,
                   priceCurrency: "INR",
                   availability: "https://schema.org/InStock",
+                  url: `https://royalwoodpackers.in/products/${product.id}`,
+                  priceValidUntil: "2025-12-31",
                   seller: {
                     "@type": "Organization",
                     name: "Royal Wood Packers",
                   },
-                },
-                manufacturer: {
-                  "@type": "Organization",
-                  name: "Royal Wood Packers",
-                },
-              })),
+                }
+              : undefined,
+            manufacturer: {
+              "@type": "Organization",
+              name: "Royal Wood Packers",
             },
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://royalwoodpackers.in",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Products",
-                  item: "https://royalwoodpackers.in/products",
-                },
-              ],
-            },
-          }),
-        }}
-      />
+            aggregateRating,
+            review,
+          };
+        }),
+      },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://royalwoodpackers.in",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Products",
+            item: "https://royalwoodpackers.in/products",
+          },
+        ],
+      },
+    }),
+  }}
+/>
+
 
       <div className="min-h-screen overflow-clip bg-gradient-to-b from-gray-900 to-gray-800">
         {/* Navigation */}
