@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://royalwoodpackers.in
+
+# Sitemaps
+Sitemap: https://royalwoodpackers.in/sitemap.xml
